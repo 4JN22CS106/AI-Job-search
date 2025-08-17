@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>AI Job Search Platform</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Welcome 👋</h1>
+    <p>Find jobs tailored to your skills and preferences</p>
+  </header>
+
+  <div class="tabs">
+    <div class="tab active" onclick="switchTab('search')">Search Jobs</div>
+    <div class="tab" onclick="switchTab('saved')">Saved Jobs</div>
+  </div>
+
+  <div class="container">
+    <div id="searchTab">
+      <div class="filters">
+        <label>Location:
+          <select id="location" onchange="searchJobs()">
+            <option value="">Any</option>
+            <optgroup label="India">
+              <option value="Bengaluru">Bengaluru</option>
+              <option value="Mumbai">Mumbai</option>
+              <option value="Delhi">Delhi</option>
+              <option value="Hyderabad">Hyderabad</option>
+              <option value="Chennai">Chennai</option>
+              <option value="Pune">Pune</option>
+              <option value="Kolkata">Kolkata</option>
+              <option value="Ahmedabad">Ahmedabad</option>
+              <option value="Shimoga">Shimoga</option>
+            </optgroup>
+            <optgroup label="Global">
+              <option value="San Francisco">San Francisco</option>
+              <option value="New York">New York</option>
+              <option value="London">London</option>
+              <option value="Berlin">Berlin</option>
+              <option value="Toronto">Toronto</option>
+              <option value="Singapore">Singapore</option>
+              <option value="Sydney">Sydney</option>
+              <option value="Remote">Remote</option>
+            </optgroup>
+          </select>
+        </label>
+
+        <label>Job Type:
+          <select id="type" onchange="searchJobs()">
+            <option value="">Any</option>
+            <option value="Full-Time">Full-Time</option>
+            <option value="Contract">Contract</option>
+          </select>
+        </label>
+
+        <label>Job Role:
+          <select id="jobRole" onchange="searchJobs()">
+            <option value="">Any</option>
+            <option value="Frontend Developer">Frontend Developer</option>
+            <option value="AI Engineer">AI Engineer</option>
+            <option value="UX Designer">UX Designer</option>
+          </select>
+        </label>
+
+        <label>Skills (comma-separated):
+          <input type="text" id="skills" placeholder="e.g. React, Python" oninput="searchJobs()" />
+        </label>
+
+        <label>Experience Level:
+          <select id="experience" onchange="searchJobs()">
+            <option value="">Any</option>
+            <option value="Junior">Junior</option>
+            <option value="Mid">Mid</option>
+            <option value="Senior">Senior</option>
+          </select>
+        </label>
+
+        <label>Years of Experience:
+          <input type="number" id="yearsExperience" placeholder="e.g. 2" oninput="searchJobs()" />
+        </label>
+      </div>
+      <div id="results" class="job-list"></div>
+    </div>
+
+    <div id="savedTab" class="hidden">
+      <h2>Saved Jobs</h2>
+      <div id="savedJobs" class="job-list"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
